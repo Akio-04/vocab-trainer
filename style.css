@@ -73,3 +73,22 @@ input {
   border: none;
   color: var(--text);
 }
+
+@media (max-width: 600px) {
+  body {
+    font-size: 18px; /* текст крупнее на телефоне */
+  }
+
+  .menu button,
+  .quiz button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  input[type="text"] {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%; /* на весь экран */
+    box-sizing: border-box;
+  }
+}
