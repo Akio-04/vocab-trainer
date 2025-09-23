@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocab Trainer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <button id="themeToggle" onclick="toggleTheme()">🌙</button>
+    <h1>📘 English Vocab Trainer</h1>
+    
+    <!-- Главное меню -->
+    <div id="menu">
+      <p>Выбери юнит:</p>
+      <div id="units"></div>
+      <button onclick="startTest('all')">Все слова</button>
+    </div>
+
+    <!-- Тест -->
+    <div id="test" class="hidden">
+      <p id="progress"></p>
+      <p id="question"></p>
+      <input id="answer" type="text" placeholder="Введите перевод">
+      <button onclick="checkAnswer()">Проверить</button>
+    </div>
+
+    <!-- Результаты -->
+    <div id="result" class="hidden">
+      <h2>Результаты</h2>
+      <p id="score"></p>
+      <ul id="mistakes"></ul>
+      <button onclick="repeatMistakes()">Повторить ошибки</button>
+      <button onclick="goMenu()">В меню</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
