@@ -2,4 +2,4 @@
 ## Installing
 --
 ## Using
-Go to akio-04.github.io/vacab-trainer[website address] and start training!
+Go to [website address](akio-04.github.io/vacab-trainer) and start training!
