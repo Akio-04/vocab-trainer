@@ -118,11 +118,3 @@ footer {
   background: #f9f9f9; /* можно убрать или заменить */
   border-top: 1px solid #ddd;
 }
-
-@media (prefers-color-scheme: dark) {
-  footer {
-    background: #aaa;
-    color: #111;
-    border-top: 1px solid #333;
-  }
-}

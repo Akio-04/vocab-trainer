@@ -125,15 +125,34 @@ function repeatMistakes() {
 }
 
 // Переключатель темы
-function toggleTheme() {
-  document.body.classList.toggle("dark");
-  const btn = document.getElementById("themeToggle");
-  if (document.body.classList.contains("dark")) {
-    btn.textContent = "☀️";
-  } else {
-    btn.textContent = "🌙";
-  }
+// function toggleTheme() {
+//   document.body.classList.toggle("dark");
+//   const btn = document.getElementById("themeToggle");
+//   if (document.body.classList.contains("dark")) {
+//     btn.textContent = "☀️";
+//   } else {
+//     btn.textContent = "🌙";
+//   }
+// }
+
+const body = document.body;
+const toggleBtn = document.getElementById("themeToggle");
+
+// при загрузке — ставим тему по умолчанию (например, светлую)
+if (!body.classList.contains("light") && !body.classList.contains("dark")) {
+  body.classList.add("light");
 }
+
+toggleBtn.addEventListener("click", () => {
+  if (body.classList.contains("light")) {
+    body.classList.remove("light");
+    body.classList.add("dark");
+  } else {
+    body.classList.remove("dark");
+    body.classList.add("light");
+  }
+});
+
 
 // ⌨️ Enter
 document.addEventListener("keydown", (e) => {
