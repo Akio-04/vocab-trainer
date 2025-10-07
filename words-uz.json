@@ -1,0 +1,10 @@
+{
+  "unit1": [
+    {"ru": "adres", "en": "address"},
+    {"ru": "alifbo", "en": "alphabet"},
+    {"ru": "va", "en": "and"},
+    {"ru": "bolmoq", "en": "be"},
+    {"ru": "biznes", "en": "business"},
+    {"ru": "shahar", "en": "city"}
+  ]
+}

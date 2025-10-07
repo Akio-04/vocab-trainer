@@ -4,6 +4,7 @@ let currentWord = {};
 let mistakes = [];
 let total = 0;
 let answered = 0;
+let currentLang = localStorage.getItem("lang") || "ru"; // по умолчанию русский
 
 const successGifs = [
   "https://media.giphy.com/media/111ebonMs90YLu/giphy.gif",
@@ -12,12 +13,14 @@ const successGifs = [
   "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExMzl0dmo4aW9xOTk2OG0xdHQzenkzaGtweXpsN2xlaDRyZDNwaGRmbiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/62PP2yEIAZF6g/giphy.gif"
 ];
 
-
 async function loadWords() {
-  const res = await fetch("words.json");
+  const file = currentLang === "uz" ? "words-uz.json" : "words-ru.json";
+  const res = await fetch(`./${file}`);
   words = await res.json();
 
   const unitsDiv = document.getElementById("units");
+  unitsDiv.innerHTML = ""; // 💡 очищаем перед добавлением новых кнопок
+
   Object.keys(words).forEach(unit => {
     const btn = document.createElement("button");
     btn.textContent = unit.toUpperCase();
@@ -25,6 +28,19 @@ async function loadWords() {
     unitsDiv.appendChild(btn);
   });
 }
+
+document.getElementById("lang-btn").addEventListener("click", () => {
+  currentLang = currentLang === "ru" ? "uz" : "ru";
+  localStorage.setItem("lang", currentLang); // сохраняем язык
+  document.getElementById("lang-btn").textContent = currentLang === "ru" ? "🇷🇺 RU" : "🇺🇿 UZ";
+
+  // 💡 Возвращаем пользователя в меню
+  document.getElementById("menu").classList.remove("hidden");
+  document.getElementById("test").classList.add("hidden");
+  document.getElementById("result").classList.add("hidden");
+
+  loadWords(); // перезагружаем слова
+});
 
 function startTest(unit, customList = null) {
   document.getElementById("menu").classList.add("hidden");
@@ -165,3 +181,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 loadWords();
+
+// 💡 при первой загрузке выставляем правильный флаг и подпись
+document.getElementById("lang-btn").textContent =
+  currentLang === "ru" ? "🇷🇺 RU" : "🇺🇿 UZ";
