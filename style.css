@@ -104,6 +104,12 @@ input {
   cursor: pointer;
   border: none;
   color: var(--text);
+  transition: transform 0.5s cubic-bezier(.26,.27,0,.74);
+}
+
+#themeToggle:hover {
+  transform: scale(1.1);
+  filter: brightness(130%);
 }
 
 #lang-btn {
@@ -116,6 +122,11 @@ input {
   cursor: pointer;
   border: none;
   color: var(--text);
+  transition: transform 0.5s cubic-bezier(.26,.27,0,.74);
+}
+
+#lang-btn:hover {
+  transform: scale(1.1);
 }
 
 footer {
