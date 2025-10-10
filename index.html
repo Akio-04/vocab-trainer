@@ -16,26 +16,26 @@
     
     <!-- Главное меню -->
     <div id="menu">
-      <p>Выбери юнит:</p>
+      <p>Select a UNIT:</p>
       <div id="units"></div>
-      <button onclick="startTest('all')">Все слова</button>
+      <button onclick="startTest('all')">All the words</button>
     </div>
 
     <!-- Тест -->
     <div id="test" class="hidden">
       <p id="progress"></p>
       <p id="question"></p>
-      <input id="answer" type="text" placeholder="Введите перевод">
-      <button onclick="checkAnswer()">Проверить</button>
+      <input id="answer" type="text" placeholder="Enter translate">
+      <button onclick="checkAnswer()">Check</button>
     </div>
 
     <!-- Результаты -->
     <div id="result" class="hidden">
-      <h2>Результаты</h2>
+      <h2>Results</h2>
       <p id="score"></p>
       <ul id="mistakes"></ul>
-      <button onclick="repeatMistakes()">Повторить ошибки</button>
-      <button onclick="goMenu()">В меню</button>
+      <button onclick="repeatMistakes()">Repeat mistakes</button>
+      <button onclick="goMenu()">Go Menu</button>
     </div>
   </div>
 
