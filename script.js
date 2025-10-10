@@ -156,18 +156,18 @@ const toggleBtn = document.getElementById("themeToggle");
 
 // при загрузке — ставим тему по умолчанию (например, светлую)
 if (!body.classList.contains("light") && !body.classList.contains("dark")) {
-  body.classList.add("dark");
+  body.classList.add("light");
 }
 
 toggleBtn.addEventListener("click", () => {
   if (body.classList.contains("light")) {
     body.classList.remove("light");
     body.classList.add("dark");
-    toggleBtn.textContent = "🌙";
+    toggleBtn.textContent = "☀️";
   } else {
     body.classList.remove("dark");
     body.classList.add("light");
-    toggleBtn.textContent = "☀️";
+    toggleBtn.textContent = "🌙";
   }
 });
 
